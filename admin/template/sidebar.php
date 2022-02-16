@@ -59,6 +59,23 @@
 				</li>
 				<li class="nav-item ">
 					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-truck"></i>
+						<p>
+							Pédidos
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a href="home.php?modulo=orderList" class="nav-link ">
+								<i class="fas fa-clipboard-check nav-icon " aria-hidden="true"></i>
+								<p>Listar Pédidos</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item ">
+					<a href="#" class="nav-link">
 						<i class="nav-icon fas fa-users"></i>
 						<p>
 							Usuaríos
@@ -81,24 +98,6 @@
 
 					</ul>
 				</li>
-				<li class="nav-item ">
-					<a href="#" class="nav-link">
-						<i class="nav-icon fas fa-truck"></i>
-						<p>
-							Pédidos
-							<i class="right fas fa-angle-left"></i>
-						</p>
-					</a>
-					<ul class="nav nav-treeview">
-						<li class="nav-item">
-							<a href="home.php?modulo=orderList" class="nav-link ">
-								<i class="fas fa-clipboard-check nav-icon " aria-hidden="true"></i>
-								<p>Listar Pédidos</p>
-							</a>
-						</li>
-					</ul>
-				</li>
-
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->

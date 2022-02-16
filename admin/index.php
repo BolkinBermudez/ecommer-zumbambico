@@ -58,7 +58,7 @@
 
             //Sí el rol de usuario es 1 lo direccionamos al home.
             if ($_SESSION['Rol'] == 1) {
-              header('location: home.php');
+              header('location: home.php?modulo=estadisticas');
             }
 
             //Sí el rol de usuario es 2 lo direccionamos a productos.
