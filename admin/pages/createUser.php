@@ -40,12 +40,13 @@ if (isset($_REQUEST['crearUsuario'])) {
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Pédidos</h1>
+                    <h1>Usuaríos</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="home.php?modulo=estadisticas">Inicio</a></li>
-                        <li class="breadcrumb-item active">Listar Pédidos</li>
+                        <li class="breadcrumb-item"><a href="home.php?modulo=userList">Listar Usuaríos</a></li>
+                        <li class="breadcrumb-item active">Crear Usuarío Administrador</li>
                     </ol>
                 </div>
             </div>
@@ -56,7 +57,7 @@ if (isset($_REQUEST['crearUsuario'])) {
     <section class="content">
 
         <!-- Default box -->
-        <div class="card">
+        <div class="card card-success">
             <div class="card-header">
                 <h3 class="card-title">Crear Usuarío Administrador</h3>
 
@@ -65,15 +66,15 @@ if (isset($_REQUEST['crearUsuario'])) {
                 <form action="home.php?modulo=createUser" method="POST">
                     <div class="form-group">
                         <label for="">Nombre</label>
-                        <input type="text" name="nombre" class="form-control" placeholder="Nombre" ">
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre" require>
                     </div>
                     <div class=" form-group">
                         <label for="">Correo</label>
-                        <input type="email" name="email" class="form-control" placeholder="Correo">
+                        <input type="email" name="email" class="form-control" placeholder="Correo" require>
                     </div>
                     <div class="form-group">
                         <label for="">Contraseña</label>
-                        <input type="password" name="pass" class="form-control" placeholder="Contraseña" ">
+                        <input type="password" name="pass" class="form-control" placeholder="Contraseña" require >
                         <br>
                     </div>
                     <div class=" form-group">

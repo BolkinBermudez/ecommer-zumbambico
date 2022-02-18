@@ -55,8 +55,8 @@
 								<td><?php echo ($row['EstadoUsu'] == 1) ? 'Activo' : 'Inactivo' ?></td>
 								<td>
 
-									<a href="home.php?modulo=userEdit?id=<?php echo $row['IdUsu'] ?>" style="margin-right: 10px; margin-left: 5px;"><i class="fas fa-edit nav-icon"></i></a>
-									<a href="home.php?modulo=userList?idBorrar=<?php echo $row['IdUsu'] ?>" class="text-danger"><i class=" fas fa-trash "></i></a>
+									<a href="home.php?modulo=userEdit&idModify=<?php echo $row['IdUsu'] ?>" style="margin-right: 10px; margin-left: 5px;"><i class="fas fa-edit nav-icon"></i></a>
+									<a href="home.php?modulo=userList&idDelete=<?php echo $row['IdUsu'] ?>" class="text-danger"><i class=" fas fa-trash "></i></a>
 
 								</td>
 							</tr>

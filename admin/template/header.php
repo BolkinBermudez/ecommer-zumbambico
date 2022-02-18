@@ -73,7 +73,7 @@ $modulo=$_REQUEST['modulo']??'';
                         <i class="far fa-user"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="editProfile.php" class="dropdown-item">
+                        <a href="home.php?modulo=userEdit&idModify=<?php echo $_SESSION['IdUsu']; ?>" class="dropdown-item">
                             Editar Perfil
                         </a>
                         <div class="dropdown-divider"></div>
