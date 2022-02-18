@@ -10,6 +10,7 @@ if (isset($_REQUEST['modifyUser'])) {
     $pass = password_hash(mysqli_real_escape_string($con, $_REQUEST['pass'] ?? ''), PASSWORD_DEFAULT, ['cost' => 7]);
     $nombre = mysqli_real_escape_string($con, $_REQUEST['nombre'] ?? '');
     $id = mysqli_real_escape_string($con, $_REQUEST['id'] ?? '');
+    $rol = mysqli_real_escape_string($con, $_REQUEST['rol']);
 
     $query = "UPDATE `usuario` SET `Rol`='".$rol."', `Nombre`='".$nombre."', `Correo`='".$email."', `Password`= '".$pass."' WHERE `IdUsu`='".$id."';";
 
@@ -75,7 +76,7 @@ $row = mysqli_fetch_assoc($res);
             <div class="card-body">
                 <form action="home.php?modulo=userEdit" method="POST">
                     <div class="form-group">
-                        <label for=""><?php echo ($row['Rol']==1)?'Administrador':'Cliente' ?></label>
+                        <label for=""><?php echo ($rol==1)?'Administrador':'Cliente' ?></label>
                         
                     </div>
                     <div class="form-group">
@@ -94,7 +95,7 @@ $row = mysqli_fetch_assoc($res);
                     </div>
 
                     <div class=" form-group">
-                        <input type="hidden" name="rol" value="<?php echo $rol?>" >
+                        <input type="hidden" name="rol" value="<?php echo $rol ?>" >
                         <input type="hidden" name="id" value="<?php echo $idModify ?>" >
                         <button type="submit" class="btn btn-info" name="modifyUser">Modifícar Usuarío</button>
                     </div>

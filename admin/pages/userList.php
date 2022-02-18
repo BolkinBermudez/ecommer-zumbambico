@@ -1,3 +1,35 @@
+<?php
+include_once 'config/conn_ddbb.php';
+$con = conectar();
+
+if (isset($_REQUEST['idDelete'])) {
+	$idDelete = mysqli_real_escape_string($con, $_REQUEST['idDelete'] ?? '');
+	$query = 'DELETE FROM usuario WHERE IdUsu ="' . $idDelete . '"; ';
+	$res = mysqli_query($con, $query);
+	if ($res) {
+?>
+		<div class="alert alert-warning alert-dismissible fade show " role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				<span class="sr-only">Close</span>
+			</button>
+			<p class="text-right font-weight-bold">Usuarío Borrado con exito.</p>
+		</div>
+	<?php
+	} else {
+	?>
+		<div class="alert alert-danger alert-dismissible fade show " role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				<span class="sr-only">Close</span>
+			</button>
+			<p class="text-right font-weight-bold">Error al borrar el Usuarío, Tipo de error: <?php echo mysqli_error($con); ?>.</p>
+		</div>
+<?php
+	}
+}
+?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
@@ -40,8 +72,6 @@
 
 						<?php
 
-						include_once 'config/conn_ddbb.php';
-						$con = conectar();
 						$query = 'SELECT IdUsu,Rol,Nombre,Correo,EstadoUsu FROM usuario; ';
 						$res = mysqli_query($con, $query);
 						while ($row = mysqli_fetch_assoc($res)) {
@@ -54,11 +84,16 @@
 								<td><?php echo $row['Correo'] ?></td>
 								<td><?php echo ($row['EstadoUsu'] == 1) ? 'Activo' : 'Inactivo' ?></td>
 								<td>
+									<?php if ($row['IdUsu'] <> $_SESSION['IdUsu']) {
+									?>
+										<a href="home.php?modulo=userEdit&idModify=<?php echo $row['IdUsu'] ?>" style="margin-right: 10px; margin-left: 5px;"><i class="fas fa-edit nav-icon"></i></a>
+										<a href="home.php?modulo=userList&idDelete=<?php echo $row['IdUsu'] ?>" class="text-danger borrar"><i class=" fas fa-trash "></i></a>
 
-									<a href="home.php?modulo=userEdit&idModify=<?php echo $row['IdUsu'] ?>" style="margin-right: 10px; margin-left: 5px;"><i class="fas fa-edit nav-icon"></i></a>
-									<a href="home.php?modulo=userList&idDelete=<?php echo $row['IdUsu'] ?>" class="text-danger"><i class=" fas fa-trash "></i></a>
-
+									<?php
+									}
+									?>
 								</td>
+
 							</tr>
 
 						<?php

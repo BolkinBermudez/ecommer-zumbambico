@@ -47,6 +47,18 @@
 		
 	});
 </script>
+<script>
+	$(document).ready(function(){
+		$(".borrar").click(function(e){
+			e.preventDefault();
+			var res= confirm("¿Desea Borrar el usuarío?");
+			if(res==true){
+				var link=$(this).attr("href");
+				window.location=link;
+			}
+		});
+	});
+</script>
 </body>
 
 </html>
