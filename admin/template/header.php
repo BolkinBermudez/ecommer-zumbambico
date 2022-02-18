@@ -2,6 +2,11 @@
 <html lang="es">
 <?php
 session_start();
+session_regenerate_id(true);
+if (isset($_REQUEST['sesion'])&& $_REQUEST['sesion']=='cerrar') {
+    session_destroy();
+    header('location: index.php');
+}
 if ($_SESSION['IdUsu'] == false or $_SESSION['Rol'] <> 1) {
     header('location: index.php');
 }
@@ -73,16 +78,22 @@ $modulo=$_REQUEST['modulo']??'';
                         <i class="far fa-user"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="home.php?modulo=userEdit&idModify=<?php echo $_SESSION['IdUsu']; ?>" class="dropdown-item">
-                            Editar Perfil
+                        
+                        <a href="home.php?modulo=userEdit&idModify=<?php echo $_SESSION['IdUsu']; ?>" class="dropdown-item text-info">
+                        <i class="fas fa-edit  nav-icon  "></i>   
+                        Editar Perfil
                         </a>
-                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-divider">
+
+
+                        </div>
                         <a href="#" class="dropdown-item">
 
                         </a>
 
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer"> Cerrar Sessión</a>
+                        
+                        <a href="home.php?modulo=&sesion=cerrar" class="dropdown-item dropdown-footer text-danger"> <i class="fa fa-sign-out-alt nav-icon " aria-hidden="true"></i>Cerrar Sessión</a>
                     </div>
                 </li>
 
