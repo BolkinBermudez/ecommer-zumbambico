@@ -41,6 +41,7 @@ $query = 'SELECT Nombre,Correo,Rol,Password FROM usuario WHERE IdUsu="' . $idMod
 $res = mysqli_query($con, $query);
 $row = mysqli_fetch_assoc($res);
 
+
 ?>
 
 
@@ -76,26 +77,26 @@ $row = mysqli_fetch_assoc($res);
             <div class="card-body">
                 <form action="home.php?modulo=userEdit" method="POST">
                     <div class="form-group">
-                        <label for=""><?php echo ($rol==1)?'Administrador':'Cliente' ?></label>
+                        <label for=""><?php echo ($row['Rol']==1)?'Administrador':'Cliente' ?></label>
                         
                     </div>
                     <div class="form-group">
                         <label for="">Nombre</label>
-                        <input type="text" name="nombre" class="form-control" require value="<?php echo $row['Nombre'] ?>" >
+                        <input type="text" name="nombre" class="form-control" required value="<?php echo $row['Nombre'] ?>" >
                     </div>
                     <div class=" form-group">
                         <label for="">Correo</label>
-                        <input type="email" name="email" class="form-control" require value="<?php echo $row['Correo'] ?>">
+                        <input type="email" name="email" class="form-control" required value="<?php echo $row['Correo'] ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="">Contraseña</label>
-                        <input type="password" name="pass" class="form-control" require placeholder="Contraseña" ">
+                        <input type="password" name="pass" class="form-control" required placeholder="Contraseña" ">
                         <br>
                     </div>
 
                     <div class=" form-group">
-                        <input type="hidden" name="rol" value="<?php echo $rol ?>" >
+                        <input type="hidden" name="rol" value="<?php echo $row['Rol'] ?>" >
                         <input type="hidden" name="id" value="<?php echo $idModify ?>" >
                         <button type="submit" class="btn btn-info" name="modifyUser">Modifícar Usuarío</button>
                     </div>

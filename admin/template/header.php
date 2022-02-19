@@ -3,7 +3,7 @@
 <?php
 session_start();
 session_regenerate_id(true);
-if (isset($_REQUEST['sesion'])&& $_REQUEST['sesion']=='cerrar') {
+if (isset($_REQUEST['sesion']) && $_REQUEST['sesion'] == 'cerrar') {
     session_destroy();
     header('location: index.php');
 }
@@ -11,7 +11,7 @@ if ($_SESSION['IdUsu'] == false or $_SESSION['Rol'] <> 1) {
     header('location: index.php');
 }
 
-$modulo=$_REQUEST['modulo']??'';
+$modulo = $_REQUEST['modulo'] ?? '';
 ?>
 
 <head>
@@ -26,10 +26,17 @@ $modulo=$_REQUEST['modulo']??'';
     <!-- Theme style -->
     <link rel="stylesheet" href="Admin/dist/css/adminlte.min.css">
 
-     <!-- DataTables -->
-  <link rel="stylesheet" href="Admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="Admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="Admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- DataTables 
+        <link rel="stylesheet" href="Admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="Admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+        <link rel="stylesheet" href="Admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    -->
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.4/css/select.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.1.1/css/dataTables.dateTime.min.css">
+    <link rel="stylesheet" href="Admin/css/editor.dataTables.min.css">
 
 </head>
 
@@ -78,10 +85,10 @@ $modulo=$_REQUEST['modulo']??'';
                         <i class="far fa-user"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        
+
                         <a href="home.php?modulo=userEdit&idModify=<?php echo $_SESSION['IdUsu']; ?>" class="dropdown-item text-info">
-                        <i class="fas fa-edit  nav-icon  "></i>   
-                        Editar Perfil
+                            <i class="fas fa-edit  nav-icon  "></i>
+                            Editar Perfil
                         </a>
                         <div class="dropdown-divider">
 
@@ -92,7 +99,7 @@ $modulo=$_REQUEST['modulo']??'';
                         </a>
 
                         <div class="dropdown-divider"></div>
-                        
+
                         <a href="home.php?modulo=&sesion=cerrar" class="dropdown-item dropdown-footer text-danger"> <i class="fa fa-sign-out-alt nav-icon " aria-hidden="true"></i>Cerrar Sessión</a>
                     </div>
                 </li>
