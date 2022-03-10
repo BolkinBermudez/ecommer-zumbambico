@@ -56,15 +56,15 @@ if (isset($_REQUEST['idDelete'])) {
 		<div class="card">
 
 			<div class="card-body">
-				<table id="example1" class="table table-bordered table-striped">
+				<table id="UserTable" class="table table-bordered table-striped">
 					<thead>
 						<tr>
 							<th>Rol</th>
 							<th>Nombre</th>
 							<th>Correo</th>
 							<th>Estado</th>
-							<th>Acciones
-								<a href="home.php?modulo=createUser" style=" margin-left: 15px;" class="text-success"><i class="fas fa-plus nav-icon"></i></a>
+							<th >
+								<a href="home.php?modulo=createUser" style=" margin-left: 15px;" class="text-success" aria-label="Close"><i class="fas fa-plus nav-icon" aria-label="Close"></i></a>
 							</th>
 						</tr>
 					</thead>
@@ -78,7 +78,7 @@ if (isset($_REQUEST['idDelete'])) {
 
 						?>
 
-							<tr>
+							<tr >
 								<td><?php echo ($row['Rol'] == 1) ? 'Administrador' : 'Cliente' ?></td>
 								<td><?php echo $row['Nombre'] ?></td>
 								<td><?php echo $row['Correo'] ?></td>

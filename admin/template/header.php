@@ -25,18 +25,10 @@ $modulo = $_REQUEST['modulo'] ?? '';
     <link rel="stylesheet" href="Admin/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="Admin/dist/css/adminlte.min.css">
-
-    <!-- DataTables 
-        <link rel="stylesheet" href="Admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-        <link rel="stylesheet" href="Admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-        <link rel="stylesheet" href="Admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-    -->
-
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.4/css/select.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/datetime/1.1.1/css/dataTables.dateTime.min.css">
-    <link rel="stylesheet" href="Admin/css/editor.dataTables.min.css">
+    
+    <link rel="stylesheet" href="Admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="Admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="Admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
 </head>
 

@@ -22,7 +22,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="Admin/dist/js/demo.js"></script>
 
-<!-- Data table Admin LTE
+ Data table Admin LTE
 <script src="Admin/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="Admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="Admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
@@ -32,13 +32,8 @@
 <script src="Admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="Admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="Admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
--->
 
-<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
-<script src="https://cdn.datatables.net/datetime/1.1.1/js/dataTables.dateTime.min.js"></script>
-<script src="Admin/js/dataTables.editor.min.js"></script>
+
 
 <!-- AdminLTE App -->
 <script src="Admin/dist/js/adminlte.min.js"></script>
@@ -47,27 +42,37 @@
 <!-- Page specific script -->
 <script>
 	$(function() {
-		$("#example1").DataTable({
+		$("#UserTable").DataTable({
 			"responsive": true,
 			"lengthChange": false,
 			"autoWidth": false,
 			"buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-		}).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-		
+		}).buttons().container().appendTo('#UserTable_wrapper .col-md-6:eq(0)');
+	});
+	$(function() {
+		$("#TableProduct").DataTable({
+			"responsive": true,
+			"lengthChange": false,
+			"autoWidth": false,
+			"buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+		}).buttons().container().appendTo('#TableProduct_wrapper .col-md-6:eq(0)');
 	});
 </script>
 <script>
-	$(document).ready(function(){
-		$(".borrar").click(function(e){
+	$(document).ready(function() {
+		$(".borrar").click(function(e) {
 			e.preventDefault();
-			var res= confirm("¿Desea Borrar el usuarío?");
-			if(res==true){
-				var link=$(this).attr("href");
-				window.location=link;
+			var res = confirm("¿Desea Borrar el usuarío?");
+			if (res == true) {
+				var link = $(this).attr("href");
+				window.location = link;
 			}
 		});
+
+
 	});
 </script>
+
 </body>
 
 </html>

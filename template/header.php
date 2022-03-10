@@ -37,7 +37,7 @@
                     <li><a href="#"><i class="fa fa-map-marker"></i> </a></li>
                 </ul>
                 <ul class="header-links pull-right">
-                     <li><a href="#"><i class="fa fa-user-o"></i> Mi Cuenta</a></li>
+                     <li><a href="admin/index.php"><i class="fa fa-user-o"></i> Mi Cuenta</a></li>
                 </ul>
             </div>
         </div>

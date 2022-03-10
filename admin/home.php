@@ -25,7 +25,15 @@ if ($modulo == 'addCategory') {
 }
 
 if ($modulo == 'addProduct') {
-	include('pages/addProduct.php');
+	include('pages/productList.php');
+}
+
+if ($modulo == 'productEdit') {
+	include('pages/productEdit.php');
+}
+
+if ($modulo == 'createProduct') {
+	include('pages/createProduct.php');
 }
 
 if ($modulo == 'orderList') {

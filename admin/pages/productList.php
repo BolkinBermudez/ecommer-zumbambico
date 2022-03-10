@@ -28,22 +28,26 @@ $con = conectar();
 		<div class="card">
 
 			<div class="card-body">
-				<table id="example1" class="table table-bordered table-striped">
+				<table id="UserTable" class="table table-bordered table-striped">
 					<thead>
 						<tr>
 							<th>Id</th>
-							<th>Nombre</th>
+							<th>Imagen</th>
 							<th>Precio</th>
 							<th>Nombre</th>
 							<th>Categoría</th>
 							<th>Cantidad</th>
+							<th>Estado</th>
+							<th>
+								<a href="home.php?modulo=createProduct" style=" margin-left: 15px;" class="text-success" aria-label="Agregar producto"><i class="fas fa-plus nav-icon" aria-label="Agregar producto."></i></a>
+							</th>
 						</tr>
 					</thead>
 					<tbody>
 
 						<?php
 
-						$query = 'SELECT IdProducto,Precio,Nombre,IdLinea,Inventario FROM producto; ';
+						$query = 'SELECT IdProducto,Precio,Nombre,IdLinea,Inventario,IdEstado FROM producto; ';
 						$res = mysqli_query($con, $query);
 						while ($row = mysqli_fetch_assoc($res)) {
 
@@ -51,10 +55,16 @@ $con = conectar();
 
 							<tr>
 								<td><?php echo $row['IdProducto'] ?></td>
+								<td></td>
 								<td><?php echo $row['Precio'] ?></td>
 								<td><?php echo $row['Nombre'] ?></td>
 								<td><?php echo $row['IdLinea'] ?></td>
 								<td><?php echo $row['Inventario'] ?></td>
+								<td><?php echo $row['IdEstado'] ?></td>
+								<td>
+									<a href="home.php?modulo=productEdit&idModify=<?php echo $row['IdProducto'] ?>" style="margin-right: 10px; margin-left: 5px;"><i class="fas fa-edit nav-icon"></i></a>
+									<a href="home.php?modulo=productList&idDelete=<?php echo $row['IdProducto'] ?>" class="text-danger borrar"><i class=" fas fa-trash "></i></a>
+								</td>
 
 							</tr>
 
